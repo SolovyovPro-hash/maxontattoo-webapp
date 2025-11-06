@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxonTattoo Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .button-shadow {
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Главное меню -->
+    <div id="homeScreen" class="min-h-screen gradient-bg p-6">
+        <div class="max-w-md mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="text-4xl mb-4">🎨</div>
+                <h1 class="text-3xl font-bold text-white mb-2">MaxonTattoo</h1>
+                <p class="text-white/80">Профессиональные татуировки</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <!-- Запись -->
+                <button onclick="showScreen('calendarScreen')" class="bg-white rounded-2xl p-6 text-center card-shadow hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">📅</div>
+                    <div class="font-semibold text-gray-800">Запись</div>
+                </button>
+
+                <!-- Портфолио -->
+                <button onclick="showScreen('portfolioScreen')" class="bg-white rounded-2xl p-6 text-center card-shadow hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">🖼️</div>
+                    <div class="font-semibold text-gray-800">Портфолио</div>
+                </button>
+
+                <!-- Оплата -->
+                <button onclick="showScreen('paymentScreen')" class="bg-white rounded-2xl p-6 text-center card-shadow hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">💰</div>
+                    <div class="font-semibold text-gray-800">Оплата</div>
+                </button>
+
+                <!-- Партнёрка -->
+                <button onclick="showScreen('partnerScreen')" class="bg-white rounded-2xl p-6 text-center card-shadow hover:scale-105 transition-transform">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <div class="font-semibold text-gray-800">Партнёрка</div>
+                </button>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="w-full bg-white/20 backdrop-blur-sm text-white rounded-xl py-4 font-semibold border border-white/30 hover:bg-white/30 transition-colors">
+                💬 Связаться с мастером
+            </button>
+        </div>
+    </div>
+
+    <!-- Экран календаря -->
+    <div id="calendarScreen" class="min-h-screen bg-white hidden">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 p-4 sticky top-0">
+            <div class="flex items-center">
+                <button onclick="showScreen('homeScreen')" class="p-2">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <h2 class="flex-1 text-center font-semibold text-gray-800">Календарь</h2>
+                <div class="w-8"></div>
+            </div>
+        </div>
+
+        <div class="p-6 max-w-md mx-auto">
+            <!-- Calendar Widget -->
+            <div class="bg-gray-50 rounded-2xl p-4 mb-6">
+                <div class="text-center font-semibold text-gray-800 mb-4">Декабрь 2024</div>
+                <div class="grid grid-cols-7 gap-2 text-center">
+                    <div class="text-gray-500 text-sm">Пн</div>
+                    <div class="text-gray-500 text-sm">Вт</div>
+                    <div class="text-gray-500 text-sm">Ср</div>
+                    <div class="text-gray-500 text-sm">Чт</div>
+                    <div class="text-gray-500 text-sm">Пт</div>
+                    <div class="text-gray-500 text-sm">Сб</div>
+                    <div class="text-gray-500 text-sm">Вс</div>
+                    
+                    <!-- Days -->
+                    <div class="py-2 text-gray-400">26</div>
+                    <div class="py-2 text-gray-400">27</div>
+                    <div class="py-2 text-gray-400">28</div>
+                    <div class="py-2 text-gray-400">29</div>
+                    <div class="py-2 text-gray-400">30</div>
+                    <div class="py-2">1</div>
+                    <div class="py-2">2</div>
+                    
+                    <div class="py-2">3</div>
+                    <div class="py-2">4</div>
+                    <div class="py-2">5</div>
+                    <div class="py-2">6</div>
+                    <div class="py-2">7</div>
+                    <div class="py-2">8</div>
+                    <div class="py-2">9</div>
+                    
+                    <div class="py-2">10</div>
+                    <div class="py-2">11</div>
+                    <div class="py-2">12</div>
+                    <div class="py-2">13</div>
+                    <div class="py-2">14</div>
+                    <div class="py-2 bg-gradient-button text-white rounded-full">15</div>
+                    <div class="py-2">16</div>
+                    
+                    <div class="py-2">17</div>
+                    <div class="py-2">18</div>
+                    <div class="py-2">19</div>
+                    <div class="py-2">20</div>
+                    <div class="py-2">21</div>
+                    <div class="py-2">22</div>
+                    <div class="py-2">23</div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="space-y-4">
+                <!-- Name -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">👤 Имя</label>
+                    <input type="text" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0" placeholder="Ваше имя">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">📝 Описание тату</label>
+                    <textarea class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-0 h-24" placeholder="Опишите что хотите сделать..."></textarea>
+                    <div class="text-xs text-gray-500 mt-1">минимум 10 символов</div>
+                </div>
+
+                <!-- Photo Upload -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">📸 Фото-референс</label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-blue-400 transition-colors">
+                        <div class="text-3xl mb-2">📎</div>
+                        <div class="text-gray-600">+ Добавить фото</div>
+                        <div class="text-xs text-gray-500 mt-1">до 5 изображений</div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button onclick="showScreen('successScreen')" class="w-full gradient-button text-white rounded-xl py-4 font-semibold button-shadow hover:scale-105 transition-transform">
+                    ✅ Отправить заявку
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Экран портфолио -->
+    <div id="portfolioScreen" class="min-h-screen bg-white hidden">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 p-4 sticky top-0">
+            <div class="flex items-center">
+                <button onclick="showScreen('homeScreen')" class="p-2">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <h2 class="flex-1 text-center font-semibold text-gray-800">Портфолио</h2>
+                <div class="w-8"></div>
+            </div>
+        </div>
+
+        <div class="p-4 max-w-md mx-auto">
+            <!-- Filters -->
+            <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+                <button class="bg-gradient-button text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                    Все
+                </button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                    Ч/Б
+                </button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                    Цветные
+                </button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                    Минимализм
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-3 gap-2">
+                <!-- Portfolio Items -->
+                <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-purple-200 to-purple-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                
+                <div class="aspect-square bg-gradient-to-br from-pink-200 to-pink-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-green-200 to-green-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                
+                <div class="aspect-square bg-gradient-to-br from-red-200 to-red-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-indigo-200 to-indigo-300 rounded-xl" onclick="showPortfolioModal()"></div>
+                <div class="aspect-square bg-gradient-to-br from-teal-200 to-teal-300 rounded-xl" onclick="showPortfolioModal()"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Экран оплаты -->
+    <div id="paymentScreen" class="min-h-screen bg-white hidden">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 p-4 sticky top-0">
+            <div class="flex items-center">
+                <button onclick="showScreen('homeScreen')" class="p-2">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <h2 class="flex-1 text-center font-semibold text-gray-800">Оплата</h2>
+                <div class="w-8"></div>
+            </div>
+        </div>
+
+        <div class="p-6 max-w-md mx-auto">
+            <!-- Order Summary -->
+            <div class="bg-gray-50 rounded-2xl p-6 mb-6">
+                <h3 class="font-semibold text-gray-800 mb-4">Детали заявки</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Заявка</span>
+                        <span class="font-medium">#125</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Дата</span>
+                        <span class="font-medium">15.12.2024</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Предоплата</span>
+                        <span class="font-semibold text-green-600">2,000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="mb-6">
+                <h3 class="font-semibold text-gray-800 mb-4">Способ оплаты</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center p-4 border-2 border-blue-500 rounded-xl bg-blue-50">
+                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-bolt text-white text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium">Telegram Pay</div>
+                        </div>
+                        <i class="fas fa-check text-blue-500"></i>
+                    </div>
+
+                    <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-gray-300 cursor-pointer">
+                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-credit-card text-white text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium">Банковская карта</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-gray-300 cursor-pointer">
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-university text-white text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-medium">Т-Банк перевод</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pay Button -->
+            <button onclick="processPayment()" class="w-full gradient-button text-white rounded-xl py-4 font-semibold button-shadow hover:scale-105 transition-transform mb-4">
+                💳 Оплатить 2,000 ₽
+            </button>
+
+            <!-- Status -->
+            <div id="paymentStatus" class="hidden bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
+                <div class="flex items-center justify-center mb-2">
+                    <div class="w-6 h-6 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin mr-2"></div>
+                    <span class="text-yellow-700 font-medium">Ожидание оплаты...</span>
+                </div>
+                <p class="text-yellow-600 text-sm">Не закрывайте это окно</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Экран партнёрки -->
+    <div id="partnerScreen" class="min-h-screen bg-white hidden">
+        <!-- Header -->
+        <div class="bg-white border-b border-gray-200 p-4 sticky top-0">
+            <div class="flex items-center">
+                <button onclick="showScreen('homeScreen')" class="p-2">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <h2 class="flex-1 text-center font-semibold text-gray-800">Партнёрская программа</h2>
+                <div class="w-8"></div>
+            </div>
+        </div>
+
+        <div class="p-6 max-w-md mx-auto">
+            <!-- Info Card -->
+            <div class="bg-gradient-bg rounded-2xl p-6 text-white mb-6">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-2">Приводите клиентов</h3>
+                <p class="opacity-90">Получайте процент с полной суммы сеанса</p>
+            </div>
+
+            <!-- Benefits -->
+            <div class="space-y-4 mb-6">
+                <div class="flex items-center p-4 bg-green-50 rounded-xl">
+                    <div class="text-2xl mr-3">💰</div>
+                    <div>
+                        <div class="font-semibold text-green-800">15% - 20% - 25%</div>
+                        <div class="text-sm text-green-600">Процент от суммы сеанса</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-4 bg-blue-50 rounded-xl">
+                    <div class="text-2xl mr-3">📊</div>
+                    <div>
+                        <div class="font-semibold text-blue-800">Авто-отчётность</div>
+                        <div class="text-sm text-blue-600">Прозрачная статистика</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-4 bg-purple-50 rounded-xl">
+                    <div class="text-2xl mr-3">🔗</div>
+                    <div>
+                        <div class="font-semibold text-purple-800">Реферальная ссылка</div>
+                        <div class="text-sm text-purple-600">Уникальный код для приглашений</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referral Code -->
+            <div class="bg-gray-50 rounded-2xl p-6 mb-6">
+                <div class="text-center">
+                    <div class="text-sm text-gray-600 mb-2">Ваш реферальный код</div>
+                    <div class="text-2xl font-mono font-bold text-gray-800 mb-4">LID8A2B4C</div>
+                    <button class="w-full bg-white border-2 border-gray-200 text-gray-800 rounded-xl py-3 font-semibold hover:border-gray-300 transition-colors">
+                        📋 Скопировать ссылку
+                    </button>
+                </div>
+            </div>
+
+            <!-- Join Button -->
+            <button class="w-full gradient-button text-white rounded-xl py-4 font-semibold button-shadow hover:scale-105 transition-transform">
+                ✅ Присоединиться
+            </button>
+        </div>
+    </div>
+
+    <!-- Экран успеха -->
+    <div id="successScreen" class="min-h-screen bg-white hidden">
+        <div class="min-h-screen flex items-center justify-center p-6">
+            <div class="max-w-md w-full text-center">
+                <!-- Success Icon -->
+                <div class="text-6xl mb-6">🎉</div>
+                
+                <!-- Title -->
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Заявка принята!</h2>
+                
+                <!-- Details -->
+                <div class="text-gray-600 mb-8">
+                    <p class="mb-2">Номер заявки: <span class="font-semibold">#125</span></p>
+                    <p>Мастер свяжется с вами в течение 24 часов</p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="space-y-3">
+                    <button class="w-full bg-gray-100 text-gray-800 rounded-xl py-4 font-semibold hover:bg-gray-200 transition-colors">
+                        📋 Мои заявки
+                    </button>
+                    <button onclick="showScreen('homeScreen')" class="w-full gradient-button text-white rounded-xl py-4 font-semibold button-shadow hover:scale-105 transition-transform">
+                        🏠 На главную
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно портфолио -->
+    <div id="portfolioModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-hidden">
+            <!-- Image -->
+            <div class="aspect-square bg-gradient-to-br from-purple-200 to-purple-300"></div>
+            
+            <!-- Content -->
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Геометрический волк</h3>
+                <p class="text-gray-600 mb-4">Чёрно-белая работа в стиле геометрия. Выполнена за 2 сеанса.</p>
+                
+                <div class="flex gap-2">
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Геометрия</span>
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Ч/Б</span>
+                </div>
+            </div>
+
+            <!-- Close Button -->
+            <div class="p-4 border-t border-gray-200">
+                <button onclick="closePortfolioModal()" class="w-full bg-gray-100 text-gray-800 rounded-xl py-3 font-semibold hover:bg-gray-200 transition-colors">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Screen management
+        function showScreen(screenId) {
+            // Hide all screens
+            document.querySelectorAll('div[id$="Screen"]').forEach(screen => {
+                screen.classList.add('hidden');
+            });
+            
+            // Show target screen
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Portfolio modal
+        function showPortfolioModal() {
+            document.getElementById('portfolioModal').classList.remove('hidden');
+        }
+
+        function closePortfolioModal() {
+            document.getElementById('portfolioModal').classList.add('hidden');
+        }
+
+        // Payment simulation
+        function processPayment() {
+            const status = document.getElementById('paymentStatus');
+            const button = document.querySelector('#paymentScreen button');
+            
+            // Show processing status
+            button.classList.add('hidden');
+            status.classList.remove('hidden');
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                status.innerHTML = `
+                    <div class="flex items-center justify-center mb-2">
+                        <div class="text-2xl text-green-500 mr-2">✅</div>
+                        <span class="text-green-700 font-medium">Оплата прошла успешно!</span>
+                    </div>
+                    <p class="text-green-600 text-sm">Предоплата 2,000 ₽ получена</p>
+                `;
+                
+                setTimeout(() => {
+                    showScreen('successScreen');
+                }, 2000);
+            }, 3000);
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePortfolioModal();
+            }
+        });
+
+        // Show home screen by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showScreen('homeScreen');
+        });
+    </script>
+</body>
+</html>
